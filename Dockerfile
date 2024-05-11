@@ -1,5 +1,5 @@
 # Utiliza una imagen base de OpenJDK
-FROM docker.io/openjdk:17-jdk-alpine
+FROM docker.io/openjdk:17-jdk-alpine3.13
 
 # Opcional: Define el mantenedor de la imagen
 LABEL maintainer="tu_nombre@ejemplo.com"
