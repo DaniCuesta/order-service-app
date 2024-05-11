@@ -9,6 +9,9 @@ spec:
     repoURL: "git@github.com:DaniCuesta/order-service-app.git"
     targetRevision: "main"
     path: "helm"
+    helm:
+      valueFiles:
+        - values-des.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: "des"
