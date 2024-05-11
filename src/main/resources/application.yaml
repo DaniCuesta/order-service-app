@@ -1,9 +1,5 @@
 server:
-  port: 8080
-
-logging:
-  level:
-    com.labo.demoapp.controller: INFO
+  port: 8083
 
 spring:
   application:
