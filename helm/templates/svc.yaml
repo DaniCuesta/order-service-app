@@ -4,8 +4,8 @@ metadata:
   name: {{ .Values.fullname }}
   namespace: des
   labels:
-    app.kubernetes.io/name: {{ .Values.labels.app.kubernetes.io.name }}
-    app.kubernetes.io/instance: {{ .Values.labels.app.kubernetes.io.instance }}
+    app.kubernetes.io/name: order-service-app
+    app.kubernetes.io/instance: order-service-instance
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -14,5 +14,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ .Values.labels.app.kubernetes.io.name }}
-    app.kubernetes.io/instance: {{ .Values.labels.app.kubernetes.io.instance }}
+    app.kubernetes.io/name: order-service-app
+    app.kubernetes.io/instance: order-service-instance
