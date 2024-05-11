@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    com.labo.demoapp.controller: INFO
+
+spring:
+  application:
+    name: order-service
+  kafka:
+    bootstrap-servers: kafka-service:9092
+    consumer:
+      group-id: "myGroup"
+
+
