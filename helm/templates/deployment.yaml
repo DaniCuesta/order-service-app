@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "example-app.fullname" . }}
+  name: {{ .Values.fullname }}
   namespace: des
   labels:
-    {{- include "example-app.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ .Values.labels.app.kubernetes.io.name }}
+    app.kubernetes.io/instance: {{ .Values.labels.app.kubernetes.io.instance }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "example-app.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/name: {{ .Values.labels.app.kubernetes.io.name }}
+      app.kubernetes.io/instance: {{ .Values.labels.app.kubernetes.io.instance }}
   template:
     metadata:
       labels:
-        {{- include "example-app.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/name: {{ .Values.labels.app.kubernetes.io.name }}
+        app.kubernetes.io/instance: {{ .Values.labels.app.kubernetes.io.instance }}
     spec:
       imagePullSecrets:
         - name: quay-credentials
@@ -22,7 +25,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 8083
+            - containerPort: {{ .Values.service.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+
 

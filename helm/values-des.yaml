@@ -1,4 +1,6 @@
-replicaCount: 2
+replicaCount: 1
+
+fullname: order-service  # Nombre completo para reutilizar en metadata
 
 image:
   repository: quay.io/danicuestam/order-service
@@ -16,3 +18,7 @@ resources:
   requests:
     cpu: "100m"
     memory: "128Mi"
+
+labels:
+  app.kubernetes.io.name: order-service
+  app.kubernetes.io.instance: "{{ .Release.Name }}"  # Esto se evaluará en tiempo de ejecución
