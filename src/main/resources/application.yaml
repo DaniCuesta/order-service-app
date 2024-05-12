@@ -5,8 +5,9 @@ spring:
   application:
     name: order-service
   kafka:
-    bootstrap-servers: kafka-service:9092
-    consumer:
-      group-id: "myGroup"
+    bootstrap-servers: "kafka-service.kafka.svc.cluster.local:9092"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 
