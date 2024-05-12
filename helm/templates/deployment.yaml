@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.fullname }}
-  namespace: des
+  namespace: kafka
   labels:
     app.kubernetes.io/name: order-service-app
     app.kubernetes.io/instance: order-service-instance
