@@ -1,5 +1,5 @@
 # Utiliza una imagen base de OpenJDK
-FROM docker.io/openjdk:23-jdk-slim
+FROM registry.access.redhat.com/ubi9/openjdk-17
 
 # Opcional: Define el mantenedor de la imagen
 LABEL maintainer="tu_nombre@ejemplo.com"
